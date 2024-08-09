@@ -1,20 +1,25 @@
-# Node.js
-node_modules/
-npm-debug.log
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Editor
-.vscode/
-.idea/
+node_modules
+dist
+dist-ssr
+*.local
+*.env
 
-# Sistemas operativos
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-Thumbs.db
-
-# Entornos
-.env
-.env.local
-.env.*.local
-
-# Archivos de compilación
-/build/
-/dist/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
