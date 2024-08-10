@@ -20,3 +20,41 @@ export const getAllArticle= async (req,res)=>{
         res.json({message:error.message})
     }
 }
+
+export const getArticle= async (req,res)=>{
+    try {
+        const article = await ArticuloModel.findAll({
+            where : {id: req.params.id}
+        })
+        res.json(article)
+    } catch (error) {
+        res.json({message:error.message})
+    }
+}
+
+
+export const updateArticle = async (req,res) =>{
+    try {
+        await ArticuloModel.update(req.body,{
+            where: {id:req.params.id}
+        })
+        res.json({
+            "message":"Articulo modificado con exito"
+        })
+    } catch (error) {
+        res.json({message:error.message})
+    }
+}
+
+export const deleteArticle = async (res,req)=>{
+    try {
+        await ArticuloModel.destroy({
+            where: {id:req.params.id}
+        })
+        res.json({
+            "message":"Articulo eliminado con exito"
+        })
+    } catch (error) {
+        res.json({message: error.message})        
+    }
+}
